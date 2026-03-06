@@ -1,67 +1,166 @@
+[English](./README.md) | [中文](./README_zh-cn.md)
+
 # Astro Blog ShokaX
 
-这是 [Hexo Theme ShokaX](https://github.com/theme-shoka-x/hexo-theme-shokaX) 在 Astro 上的重构版本，使用 Astro + Svelte 5 + UnoCSS 技术栈
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/theme-shoka-x/astro-blog-shokax)
+[![Deploy with EdgeOne Pages](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https://github.com/theme-shoka-x/astro-blog-shokax)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/theme-shoka-x/astro-blog-shokax)
+
+This project is a reconstruction of [Hexo Theme ShokaX](https://github.com/theme-shoka-x/hexo-theme-shokaX) on Astro, built with Astro + Svelte 5 + UnoCSS.
 
 [<img width="3840" height="2160" alt="1" src="https://github.com/user-attachments/assets/e740fc5f-c66f-4500-9da8-036477a42af6" />](https://preview.astro.kaitaku.xyz/)
 
-## ✨ 功能特性
+🌐 Live preview: [https://preview.astro.kaitaku.xyz/](https://preview.astro.kaitaku.xyz/)
 
-- 延续 ShokaX 原版设计语言的优雅界面
-- 内置日间 / 暗夜主题模式
-- 通过 Hyc 交互式安装、配置和使用博客
-- 基于 Hyacine Plugins 的可扩展插件体系
-- 丰富的 Markdown / MDX 增强特性
-- 支持标签云、时间线视图与分类树结构
-- 基于 Pagefind 的无后端高性能全文搜索
-- 独立的友链页面支持
-- 开箱即用的说说/动态支持
-- 自动生成智能目录（ToC）
-- HyC 赋能的 AI 摘要和 AI 文章推荐
-- 基于 AES-256-GCM 和 PBKDF2 的构建时文章加密
-- 以性能优先为核心的设计与开发理念
-- 更多扩展能力，详见文档说明
+## ✨ Features
 
-## 安装
+- Elegant UI that continues the original ShokaX design language
+- Built-in light / dark theme support
+- Interactive blog installation, configuration, and usage through HyC
+- Extensible plugin system powered by Hyacine Plugins
+- Rich Markdown / MDX enhancement features
+- Tag cloud, timeline view, and category tree support
+- Backend-free, high-performance full-text search powered by Pagefind
+- Standalone friends links page support
+- Built-in moments / status updates support
+- Automatically generated smart table of contents (ToC)
+- AI summaries and AI article recommendations powered by HyC
+- Build-time post encryption based on AES-256-GCM and PBKDF2
+- Performance-first design and development philosophy
+- More extension capabilities — see the documentation for details
 
-本项目建议使用 [Bun](https://bun.sh/) 运行，不保证与 Nodejs 的兼容性
+## 📦 Installation
 
-您可以直接将本仓库 Clone 到本地（并为我们点一个 Star 😜），来开始使用。也可使用[由 Hyc 提供的交互式安装支持]()
-然后进入如下操作：
+We recommend using [Bun](https://bun.sh/) to run this project. Compatibility with Node.js is not guaranteed.
+
+You can clone this repository directly to get started (and maybe drop us a Star 😜), or use the [interactive installation flow provided by HyC](https://docs.astro.kaitaku.xyz/start/guides/).
+
+Quick start:
 
 ```bash
+git clone https://github.com/theme-shoka-x/astro-blog-shokax
+
+cd astro-blog-shokax
+
 bun install
 
-# 启动开发服务器
+# Start the development server
 bun run dev
 
-# 构建生产版本
+# Build for production
 bun run build
 ```
 
-然后，查看完整文档来进行下一步：[ShokaX Astro 文档](https://docs.astro.kaitaku.xyz/start/guides/)
+Your site is now ready to use. If you'd like to customize it, check the full documentation for the next step: [ShokaX Astro Docs](https://docs.astro.kaitaku.xyz/start/guides/)
 
-## 备注
+## 📂 Project Structure
 
-### 有关资源与许可证说明
+This project follows the standard directory conventions of Astro 5 and Vite:
 
-- 本项目的主要样式与设计理念来自 [Shoka](https://github.com/amehime/hexo-theme-shoka)，但本项目为独立实现，仅在设计理念与风格上受到启发，出于致敬目的，在`license`目录下放置 Shoka 的原始 MIT 许可证(LICENSE-shoka)
-- 本项目是 [Hexo ShokaX](https://github.com/theme-shoka-x/hexo-theme-shokaX) 的独立自研重写版本，未直接使用其代码与资源，为独立实现，且本仓库由 ShokaX 项目团队直接维护，与 Hexo ShokaX 作者相同，所以本项目使用 ShokaX 作为项目名称
-- 本项目中默认的 avatar 图片为 [QuAn\_](https://www.pixiv.net/users/6657532) 的作品，本项目中该图片仅用于展示，版权归原作者所有，用户需自行确认使用合规性，请在正式部署前使用版权可控的图片替换本图片
-- 本项目使用了 [Maple Mono](https://font.subf.dev/zh-cn/) 和[霞鹜文楷](https://github.com/lxgw/LxgwWenKai) 作为项目的默认字体，两款字体均为 OFL 1.1 许可证，其分发许可证分别为`licenses/LICENSE-maple-mono.txt`和`licenses/OFL.txt`
-  本项目在构建过程中会在遵从 OFL 1.1 许可证的前提下对字体进行子集化、格式转换与压缩
-- 本项目默认使用的 cover 来自 [Unsplash](https://unsplash.com/)，遵循 [Unsplash License](https://unsplash.com/license) 使用与分发
-- 本项目本身（即根目录下的`LICENSE`）只适用于本项目中的代码资源，对于不包含于上述内容中的其他未标明或未知的非代码资产，本项目本身的 LICENSE 不适用，应视为原作者保留所有权
+```tree
+astro-blog-shokax
+├── src/                          # Source files
+│   ├── assets/                   # Images / fonts
+│   │   ├── fonts/                # Fonts
+│   │   ├── images/               # 🌟 Cover images
+│   │   ├── icons/                # Part of RemixIcon assets (used for Shadow DOM)
+│   │   ├── avatar.avif           # 🌟 Site owner avatar
+│   ├── components/               # Astro / Svelte components
+│   ├── content/                  # Content outside collections
+│   │   ├── friend-rules.md       # 🌟 Friends link rules
+│   ├── i18n/                     # i18n system
+│   ├── layouts/                  # Page layouts
+│   ├── moments/                  # 🌟 Moments / status content collection
+│   ├── pages/                    # Route pages
+│   ├── posts/                    # 🌟 Post content collection
+│   ├── remark-plugins/           # Markdown extensions
+│   ├── stores/                   # Global stores
+│   ├── styles/                   # Non-component stylesheets
+│   ├── toolkit/                  # Utilities
+│   ├── content.config.ts         # Content collections config
+│   ├── theme.config.ts           # 🌟 Theme configuration
+│   ├── theme.config.template.txt # HyC interactive config template
+├── hyacine.yml                   # HyC configuration
+├── astro.config.mjs              # 🌟 Astro configuration
 
-### 致谢
+# Items marked with 🌟 are the key files/folders you will likely care about when using this theme
+```
 
-ShokaX 开发组向所有 ShokaX 在过去、现在和未来的使用过与可能使用的开源项目与所有 ShokaX 的用户、贡献者和开发者致谢，如果没有他们的支持，我们不可能构建出 ShokaX
+## ⚙️ HyC Capabilities
 
-其中，这些项目为我们的开发做出了极大的支持，特此再次致谢（随机排列，不分先后）：
+ShokaX includes `@hyacine/cli` and `@hyacine/core` and provides the following capabilities:
 
-- [Astro](https://astro.build/)：本项目的基石
-- [UnoCSS](https://unocss.dev/)：现代化的原子 CSS 引擎，彻底解决了在前作中困扰开发组很长时间的图标问题
-- [Svelte](https://svelte.dev/)：本项目的前端 UI 框架，个人博客项目的理想之选
-- [Mizuki](https://github.com/matsuzaka-yuki/Mizuki)：直接启发了开发组进行 Astro 迁移，为我们的迁移提供了极好的榜样
-- [Bun](https://bun.sh/)：本项目使用的运行时，高性能而易用
-- [Vercel](https://vercel.com/)：驱动了本项目的有关网站和 API 系统
-- [Shoka](https://github.com/amehime/hexo-theme-shoka)：ShokaX 的起源，没有 Shoka 便不可能有 ShokaX
+- AI recommendations and summaries
+- Interactive installation and configuration
+- Lightweight local CMS
+- Blog extension plugins
+
+```shell
+# Global installation is recommended, or you can use `bun hyc` later instead of `hyc`
+bun add @hyacine/cli -g
+
+hyc sync # Sync database and content collections
+
+# Create a new post
+hyc new "Title"
+
+# Publish a post
+hyc publish "title/slug/file-name"
+
+# Sort posts by category
+hyc sort category
+
+# Start the local CMS and interactive configuration
+hyc serve
+# Visit the official console at https://hyc.kaitaku.xyz/ to get started
+
+# HyC plugins are currently in Alpha and related documentation is still in progress
+# This theme currently enables the Site-Uptime (site age) and Mouse-firework (click effect) plugins by default
+# See hyacine.plugin.ts for details
+```
+
+## 🚀 Performance
+
+We use [LHCI](https://github.com/GoogleChrome/lighthouse-ci) to test page performance, and each commit includes test results. Our minimum requirement is Lighthouse desktop Performance 92+, and in practice the score is usually around 96–98:
+
+![Lighthouse Results](https://github.com/user-attachments/assets/c355daf9-4a83-4907-a65c-7fc582644049)
+
+## 🤝 Contributing
+
+Pull requests are welcome. The project uses the following workflows to validate changes:
+
+- Lighthouse CI, with the following thresholds:
+  - Performance >= 0.92
+  - Accessibility >= 0.9
+  - Best Practices and SEO >= 0.95
+- CodeQL Scan & Code Quality
+- ~~E2E testing~~ (currently being introduced)
+
+If CI does not pass, you can still submit a PR and we will help improve it.
+
+This project is licensed under AGPL v3.
+
+## 📄 Notes
+
+### About assets and licensing
+
+- The main styles and design philosophy of this project are inspired by [Shoka](https://github.com/amehime/hexo-theme-shoka). However, this project is an independent implementation. To pay tribute, the original MIT license of Shoka is included in the `licenses` directory as `LICENSE-shoka`.
+- This project is an independently developed rewrite of [Hexo ShokaX](https://github.com/theme-shoka-x/hexo-theme-shokaX). It does not directly reuse its code or assets. It is maintained directly by the ShokaX project team, which is also why the project uses the ShokaX name.
+- The default avatar image in this project is artwork by [QuAn\_](https://www.pixiv.net/users/6657532). It is included for demonstration purposes only and remains the property of the original author. Please replace it with an asset you are authorized to use before deploying to production.
+- This project uses [Maple Mono](https://font.subf.dev/zh-cn/) and [LXGW WenKai](https://github.com/lxgw/LxgwWenKai) as the default fonts. Both are distributed under the OFL 1.1 license, with license texts available at `licenses/LICENSE-maple-mono.txt` and `licenses/OFL.txt` respectively.
+  During the build process, fonts may be subsetted, converted, and compressed in compliance with OFL 1.1.
+- The default cover images in this project come from [Unsplash](https://unsplash.com/) and are used and distributed under the [Unsplash License](https://unsplash.com/license).
+- The project's own `LICENSE` in the repository root applies only to the code assets in this project. For any non-code assets not covered above or not explicitly identified, the root license does not apply and rights should be considered reserved by the original author.
+
+### 🙏 Acknowledgements
+
+The ShokaX development team would like to thank every open source project, user, contributor, and developer who has supported ShokaX in the past, present, and future. Without them, this project would not exist.
+
+These projects in particular have provided tremendous support during development, and we would like to thank them again here (in no particular order):
+
+- [Astro](https://astro.build/): the foundation of this project
+- [UnoCSS](https://unocss.dev/): a modern atomic CSS engine that completely solved the icon issues that troubled the team for a long time in earlier iterations
+- [Svelte](https://svelte.dev/): the frontend UI framework used in this project, an excellent choice for personal blogs
+- [Mizuki](https://github.com/matsuzaka-yuki/Mizuki): directly inspired the team's Astro migration and provided an excellent example to follow
+- [Bun](https://bun.sh/): the runtime used in this project, fast and delightful to use
+- [Shoka](https://github.com/amehime/hexo-theme-shoka): the origin of ShokaX — without Shoka, ShokaX would not exist
