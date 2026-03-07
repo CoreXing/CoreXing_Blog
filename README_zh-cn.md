@@ -124,9 +124,9 @@ hyc serve
 
 ## 🚀 性能
 
-我们使用 [LHCI](https://github.com/GoogleChrome/lighthouse-ci) 测试页面性能，每次提交下都有测试结果。我们对页面性能的最低要求为 Lighthouse 桌面 Performance 92+，实际表现在 96-98 之间：
+我们使用 [LHCI](https://github.com/GoogleChrome/lighthouse-ci) 测试页面性能，每次提交下都有测试结果。我们对页面性能的最低要求为 Lighthouse 桌面 Performance 92+，实际表现在 98-100 之间：
 
-![Lighthouse 结果](https://github.com/user-attachments/assets/c355daf9-4a83-4907-a65c-7fc582644049)
+<img width="1702" height="952" alt="lighthouse" src="https://github.com/user-attachments/assets/05b8768f-5f04-4204-8f4f-7f2f6f30e102" />
 
 ## 🖌️ 三栏式布局
 

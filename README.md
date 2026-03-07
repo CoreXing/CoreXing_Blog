@@ -124,9 +124,9 @@ hyc serve
 
 ## 🚀 Performance
 
-We use [LHCI](https://github.com/GoogleChrome/lighthouse-ci) to test page performance, and each commit includes test results. Our minimum requirement is Lighthouse desktop Performance 92+, and in practice the score is usually around 96–98:
+We use [LHCI](https://github.com/GoogleChrome/lighthouse-ci) to test page performance, and each commit includes test results. Our minimum requirement is Lighthouse desktop Performance 92+, and in practice the score is usually around 98–100:
 
-![Lighthouse Results](https://github.com/user-attachments/assets/c355daf9-4a83-4907-a65c-7fc582644049)
+<img width="1702" height="952" alt="lighthouse" src="https://github.com/user-attachments/assets/05b8768f-5f04-4204-8f4f-7f2f6f30e102" />
 
 ## 🖌️ Three-Column Layout
 
