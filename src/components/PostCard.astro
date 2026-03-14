@@ -75,7 +75,7 @@ const lastCategory = post.data.categories?.[post.data.categories.length - 1];
     border-radius: 0.375rem;
     overflow: hidden;
     background: var(--grey-0);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px oklch(0 0 0 / 0.1);
     transition: all 0.3s ease;
     animation: slideUpBigIn 0.6s ease-out forwards;
     opacity: 0;
@@ -83,7 +83,7 @@ const lastCategory = post.data.categories?.[post.data.categories.length - 1];
 
   .post-card:hover {
     transform: translateY(-0.25rem);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 16px oklch(0 0 0 / 0.15);
   }
 
   @keyframes slideUpBigIn {
@@ -133,8 +133,8 @@ const lastCategory = post.data.categories?.[post.data.categories.length - 1];
     bottom: 0;
     background: linear-gradient(
       135deg,
-      rgba(67, 67, 67, 0.3),
-      rgba(0, 0, 0, 0.3)
+      oklch(0.384 0.012 28.9 / 0.3),
+      oklch(0 0 0 / 0.3)
     );
     z-index: 1;
   }

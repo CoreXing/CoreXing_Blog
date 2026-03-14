@@ -52,7 +52,7 @@
     display: inline-block;
     position: relative;
     left: 0;
-    box-shadow: 0 0 0.5rem #00000080;
+    box-shadow: 0 0 0.5rem oklch(0 0 0 / 0.502);
   }
 
   @media (min-width: 1024px) {

@@ -58,7 +58,7 @@
     border-radius: 0.625rem;
     text-align: center;
     text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.08);
+    background-color: oklch(0 0 0 / 0.08);
     transition: all 0.2s ease-out;
     border: none;
     flex-wrap: wrap;

@@ -252,13 +252,13 @@
     border-radius: 50%;
   }
   .red {
-    background: rgb(252, 98, 93);
+    background: oklch(0.62 0.2 16.9);
   }
   .yellow {
-    background: rgb(253, 188, 64);
+    background: oklch(0.74 0.14 73);
   }
   .green {
-    background: rgb(53, 205, 75);
+    background: oklch(0.66 0.11 138);
   }
 
   .lang-text {
@@ -335,7 +335,7 @@
     -webkit-mask-position: center;
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px oklch(0 0 0 / 0.15);
     z-index: 10;
     animation: float 2s ease-in-out infinite;
     scale: 1.5;
@@ -344,7 +344,7 @@
   .collapse-btn:hover {
     background-color: var(--grey-6);
     transform: translateX(-50%) scale(1.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px oklch(0 0 0 / 0.2);
   }
 
   /* 飘动动画 */
@@ -481,39 +481,39 @@
 
   /* 主题相关的悬停颜色 - 与 Shiki 主题颜色协调 */
   :global(html:not([data-theme="dark"]) code-block) {
-    --line-hover-bg: rgba(0, 0, 0, 0.06);
-    --cb-line-highlight-bg: rgba(255, 235, 59, 0.14);
-    --cb-line-highlight-border: rgba(255, 193, 7, 0.9);
-    --cb-diff-add-bg: rgba(76, 175, 80, 0.14);
-    --cb-diff-add-border: rgba(76, 175, 80, 0.75);
-    --cb-diff-remove-bg: rgba(244, 67, 54, 0.14);
-    --cb-diff-remove-border: rgba(244, 67, 54, 0.75);
+    --line-hover-bg: oklch(0 0 0 / 0.06);
+    --cb-line-highlight-bg: oklch(0.93 0.131 60 / 0.14);
+    --cb-line-highlight-border: oklch(0.845 0.148 46.9 / 0.9);
+    --cb-diff-add-bg: oklch(0.676 0.077 120.2 / 0.14);
+    --cb-diff-add-border: oklch(0.676 0.077 120.2 / 0.75);
+    --cb-diff-remove-bg: oklch(0.643 0.213 18.1 / 0.14);
+    --cb-diff-remove-border: oklch(0.643 0.213 18.1 / 0.75);
     --cb-focus-dim-opacity: 0.55;
-    --cb-focus-bg: rgba(33, 150, 243, 0.08);
-    --cb-focus-border: rgba(33, 150, 243, 0.65);
-    --cb-error-bg: rgba(244, 67, 54, 0.14);
-    --cb-warning-bg: rgba(255, 152, 0, 0.14);
-    --cb-error-border: rgba(244, 67, 54, 0.85);
-    --cb-warning-border: rgba(255, 152, 0, 0.85);
-    --cb-highlighted-word-bg: rgba(255, 235, 59, 0.25);
+    --cb-focus-bg: oklch(0.661 0.162 216 / 0.08);
+    --cb-focus-border: oklch(0.661 0.162 216 / 0.65);
+    --cb-error-bg: oklch(0.643 0.213 18.1 / 0.14);
+    --cb-warning-bg: oklch(0.77 0.17 35 / 0.14);
+    --cb-error-border: oklch(0.643 0.213 18.1 / 0.85);
+    --cb-warning-border: oklch(0.77 0.17 35 / 0.85);
+    --cb-highlighted-word-bg: oklch(0.93 0.131 60 / 0.25);
   }
 
   :global(html[data-theme="dark"] code-block) {
-    --line-hover-bg: rgba(255, 255, 255, 0.1);
-    --cb-line-highlight-bg: rgba(255, 255, 255, 0.06);
-    --cb-line-highlight-border: rgba(255, 193, 7, 0.35);
-    --cb-diff-add-bg: rgba(76, 175, 80, 0.16);
-    --cb-diff-add-border: rgba(76, 175, 80, 0.55);
-    --cb-diff-remove-bg: rgba(244, 67, 54, 0.16);
-    --cb-diff-remove-border: rgba(244, 67, 54, 0.55);
+    --line-hover-bg: oklch(1 0 0 / 0.1);
+    --cb-line-highlight-bg: oklch(1 0 0 / 0.06);
+    --cb-line-highlight-border: oklch(0.845 0.148 46.9 / 0.35);
+    --cb-diff-add-bg: oklch(0.676 0.077 120.2 / 0.16);
+    --cb-diff-add-border: oklch(0.676 0.077 120.2 / 0.55);
+    --cb-diff-remove-bg: oklch(0.643 0.213 18.1 / 0.16);
+    --cb-diff-remove-border: oklch(0.643 0.213 18.1 / 0.55);
     --cb-focus-dim-opacity: 0.5;
-    --cb-focus-bg: rgba(33, 150, 243, 0.12);
-    --cb-focus-border: rgba(33, 150, 243, 0.55);
-    --cb-error-bg: rgba(244, 67, 54, 0.18);
-    --cb-warning-bg: rgba(255, 152, 0, 0.18);
-    --cb-error-border: rgba(244, 67, 54, 0.7);
-    --cb-warning-border: rgba(255, 152, 0, 0.7);
-    --cb-highlighted-word-bg: rgba(255, 235, 59, 0.18);
+    --cb-focus-bg: oklch(0.661 0.162 216 / 0.12);
+    --cb-focus-border: oklch(0.661 0.162 216 / 0.55);
+    --cb-error-bg: oklch(0.643 0.213 18.1 / 0.18);
+    --cb-warning-bg: oklch(0.77 0.17 35 / 0.18);
+    --cb-error-border: oklch(0.643 0.213 18.1 / 0.7);
+    --cb-warning-border: oklch(0.77 0.17 35 / 0.7);
+    --cb-highlighted-word-bg: oklch(0.93 0.131 60 / 0.18);
   }
 
   /* 全屏样式 */
@@ -531,7 +531,7 @@
     animation: fullscreenIn 0.3s ease-out;
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: oklch(0 0 0 / 0.85);
     backdrop-filter: blur(8px);
     padding: 2rem;
     box-sizing: border-box;

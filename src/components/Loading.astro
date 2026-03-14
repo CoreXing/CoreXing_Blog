@@ -19,7 +19,10 @@
 
 <style>
   :root {
-    --box-bg-shadow: rgba(0, 0, 0, 0.1);
+    --box-bg-shadow: oklch(0 0 0 / 0.1);
+    --loading-cat-fur-base: oklch(78.524% 0.12388 69.513);
+    --loading-cat-fur-light: oklch(89.291% 0.04099 78.046);
+    --loading-cat-fur-dark: oklch(0.69 0.1 66);
   }
 
   #loading {
@@ -70,16 +73,16 @@
     background-image: radial-gradient(
       transparent 0%,
       transparent 35%,
-      rgb(56, 60, 75) 35%,
-      rgb(56, 60, 75) 39%,
-      rgb(237, 166, 93) 39%,
-      rgb(237, 166, 93) 46%,
-      rgb(242, 192, 137) 46%,
-      rgb(242, 192, 137) 60%,
-      rgb(237, 166, 93) 60%,
-      rgb(237, 166, 93) 67%,
-      rgb(56, 60, 75) 67%,
-      rgb(56, 60, 75) 100%
+      oklch(0.36 0.012 257) 35%,
+      oklch(0.36 0.012 257) 39%,
+      var(--loading-cat-fur-base) 39%,
+      var(--loading-cat-fur-base) 46%,
+      var(--loading-cat-fur-light) 46%,
+      var(--loading-cat-fur-light) 60%,
+      var(--loading-cat-fur-base) 60%,
+      var(--loading-cat-fur-base) 67%,
+      oklch(0.36 0.012 257) 67%,
+      oklch(0.36 0.012 257) 100%
     );
     animation: 2.74s linear infinite body;
   }
@@ -89,12 +92,12 @@
     background-image: radial-gradient(
       transparent 0%,
       transparent 35%,
-      rgb(56, 60, 75) 35%,
-      rgb(56, 60, 75) 39%,
-      rgb(237, 166, 93) 39%,
-      rgb(237, 166, 93) 67%,
-      rgb(56, 60, 75) 67%,
-      rgb(56, 60, 75) 100%
+      oklch(0.36 0.012 257) 35%,
+      oklch(0.36 0.012 257) 39%,
+      var(--loading-cat-fur-base) 39%,
+      var(--loading-cat-fur-base) 67%,
+      oklch(0.36 0.012 257) 67%,
+      oklch(0.36 0.012 257) 100%
     );
   }
 
@@ -119,8 +122,8 @@
       linear-gradient(var(--grey-1) 65%, transparent 65%),
       radial-gradient(
         var(--grey-1) 51%,
-        rgb(56, 60, 75) 55%,
-        rgb(56, 60, 75) 68%,
+        oklch(0.36 0.012 257) 55%,
+        oklch(0.36 0.012 257) 68%,
         transparent 70%
       );
     transform: rotate(-66deg);
@@ -136,61 +139,61 @@
     background:
       radial-gradient(
           circle,
-          rgb(242, 192, 137) 0%,
-          rgb(242, 192, 137) 23%,
+          var(--loading-cat-fur-light) 0%,
+          var(--loading-cat-fur-light) 23%,
           transparent 23%
         ) -0.1875em
         1.0625em no-repeat,
       radial-gradient(
           circle,
-          rgb(56, 60, 75) 0%,
-          rgb(56, 60, 75) 6%,
+          oklch(0.36 0.012 257) 0%,
+          oklch(0.36 0.012 257) 6%,
           transparent 6%
         )
         0.75em -0.75em no-repeat,
       radial-gradient(
           circle,
-          rgb(56, 60, 75) 0%,
-          rgb(56, 60, 75) 6%,
+          oklch(0.36 0.012 257) 0%,
+          oklch(0.36 0.012 257) 6%,
           transparent 6%
         ) -0.75em -0.75em
         no-repeat,
       radial-gradient(
-          rgb(237, 166, 93) 0%,
-          rgb(237, 166, 93) 15%,
+          var(--loading-cat-fur-base) 0%,
+          var(--loading-cat-fur-base) 15%,
           transparent 15%
         )
         0 -0.6875em no-repeat,
       radial-gradient(
           circle,
           transparent 5%,
-          rgb(56, 60, 75) 5%,
-          rgb(56, 60, 75) 10%,
+          oklch(0.36 0.012 257) 5%,
+          oklch(0.36 0.012 257) 10%,
           transparent 10%
         ) -0.1875em -0.3125em
         no-repeat,
       radial-gradient(
           circle,
           transparent 5%,
-          rgb(56, 60, 75) 5%,
-          rgb(56, 60, 75) 10%,
+          oklch(0.36 0.012 257) 5%,
+          oklch(0.36 0.012 257) 10%,
           transparent 10%
         )
         0.1875em -0.3125em no-repeat,
-      radial-gradient(circle, rgb(237, 166, 93) 45%, transparent 45%)
+      radial-gradient(circle, var(--loading-cat-fur-base) 45%, transparent 45%)
         0 -0.1875em,
       linear-gradient(
         transparent 35%,
-        rgb(56, 60, 75) 35%,
-        rgb(56, 60, 75) 41%,
+        oklch(0.36 0.012 257) 35%,
+        oklch(0.36 0.012 257) 41%,
         transparent 41%,
         transparent 44%,
-        rgb(56, 60, 75) 44%,
-        rgb(56, 60, 75) 50%,
+        oklch(0.36 0.012 257) 44%,
+        oklch(0.36 0.012 257) 50%,
         transparent 50%,
         transparent 53%,
-        rgb(56, 60, 75) 53%,
-        rgb(56, 60, 75) 59%,
+        oklch(0.36 0.012 257) 53%,
+        oklch(0.36 0.012 257) 59%,
         transparent 59%
       );
   }
@@ -214,8 +217,8 @@
     left: 2.5em;
     z-index: -1;
     transform: rotate(25deg);
-    background-color: rgb(198, 130, 59);
-    border: 0.375em solid rgb(56, 60, 75);
+    background-color: var(--loading-cat-fur-dark);
+    border: 0.375em solid oklch(0.36 0.012 257);
     border-bottom: 0;
     border-radius: 0.75em 0.75em 0 0;
   }
@@ -225,7 +228,7 @@
     height: 1.5em;
     position: absolute;
     border-radius: 50%;
-    background-color: rgb(242, 192, 137);
+    background-color: var(--loading-cat-fur-light);
     left: 1.1875em;
     top: 6.5625em;
   }
@@ -236,11 +239,11 @@
     position: absolute;
     top: 4.875em;
     left: 0.75em;
-    border: 0.375em solid rgb(56, 60, 75);
+    border: 0.375em solid oklch(0.36 0.012 257);
     border-bottom: 0;
     border-radius: 50%;
     transform: rotate(21deg);
-    background: rgb(237, 166, 93);
+    background: var(--loading-cat-fur-base);
   }
 
   .cat .hands,
@@ -248,8 +251,8 @@
     width: 0.625em;
     height: 1.5625em;
     position: absolute;
-    border: 0.375em solid rgb(56, 60, 75);
-    background-color: rgb(237, 166, 93);
+    border: 0.375em solid oklch(0.36 0.012 257);
+    background-color: var(--loading-cat-fur-base);
   }
 
   .cat .hands {

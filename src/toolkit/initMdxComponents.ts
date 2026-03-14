@@ -72,8 +72,9 @@ const bindQuizItem = (quizItem: QuizItem) => {
       let stateIcon = quizItem.querySelector(":scope > .quiz-state-icon");
       if (!stateIcon) {
         stateIcon = document.createElement("span");
-        stateIcon.className = `quiz-state-icon ${quizType === "true" ? "i-ri-check-fill" : "i-ri-close-fill"
-          }`;
+        stateIcon.className = `quiz-state-icon ${
+          quizType === "true" ? "i-ri-check-fill" : "i-ri-close-fill"
+        }`;
         stateIcon.setAttribute("aria-hidden", "true");
         quizItem.append(stateIcon);
       }
@@ -285,4 +286,4 @@ const setupMdxComponents = () => {
 
 setupMdxComponents();
 
-export { };
+export {};

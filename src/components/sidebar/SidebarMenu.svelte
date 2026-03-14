@@ -111,7 +111,7 @@
   }
 
   .menu .item:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: oklch(0 0 0 / 0.1);
     color: inherit;
   }
 

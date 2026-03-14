@@ -322,7 +322,7 @@
     cursor: pointer;
     background:
       radial-gradient(circle at top, var(--grey-1-a3), transparent 55%),
-      rgba(15, 18, 25, 0.34);
+      oklch(0.183 0.008 243.1 / 0.34);
     backdrop-filter: blur(14px) saturate(140%);
     transition: opacity 0.3s ease;
   }
@@ -344,8 +344,8 @@
       color-mix(in srgb, var(--grey-2) 92%, var(--color-pink-light) 8%)
     );
     box-shadow:
-      0 1.5rem 3rem rgba(15, 18, 25, 0.16),
-      inset 0 1px 0 rgba(255, 255, 255, 0.22);
+      0 1.5rem 3rem oklch(0.183 0.008 243.1 / 0.16),
+      inset 0 1px 0 oklch(1 0 0 / 0.22);
     backdrop-filter: blur(20px) saturate(180%);
     transform: translateY(-1.5rem) scale(0.98);
     transition:
@@ -356,8 +356,8 @@
   .search-shell-visible .pagefind-panel {
     transform: translateY(0) scale(1);
     box-shadow:
-      0 2rem 4rem rgba(15, 18, 25, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.26);
+      0 2rem 4rem oklch(0.183 0.008 243.1 / 0.2),
+      inset 0 1px 0 oklch(1 0 0 / 0.26);
   }
 
   .search-panel__ornament {
@@ -414,7 +414,7 @@
     border-color: color-mix(in srgb, var(--color-red) 30%, var(--grey-4));
     background: color-mix(in srgb, var(--color-red-a1) 55%, var(--grey-1));
     color: var(--color-red);
-    box-shadow: 0 0.75rem 1.5rem rgba(226, 40, 67, 0.12);
+    box-shadow: 0 0.75rem 1.5rem oklch(0.593 0.209 13.9 / 0.12);
     outline: none;
   }
 
@@ -485,8 +485,8 @@
       color-mix(in srgb, var(--grey-2) 94%, transparent)
     );
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.3),
-      0 0.75rem 1.5rem rgba(15, 18, 25, 0.06);
+      inset 0 1px 0 oklch(1 0 0 / 0.3),
+      0 0.75rem 1.5rem oklch(0.183 0.008 243.1 / 0.06);
     color: var(--text-color);
     padding-inline: 1rem 3rem;
     transition:
@@ -499,7 +499,7 @@
     border-color: color-mix(in srgb, var(--color-red) 38%, var(--grey-4));
     box-shadow:
       0 0 0 0.25rem color-mix(in srgb, var(--color-red-a1) 78%, transparent),
-      0 1rem 2rem rgba(226, 40, 67, 0.08);
+      0 1rem 2rem oklch(0.593 0.209 13.9 / 0.08);
     outline: none;
     transform: translateY(-1px);
   }
@@ -551,7 +551,7 @@
       color-mix(in srgb, var(--grey-0) 88%, transparent),
       color-mix(in srgb, var(--grey-2) 94%, transparent)
     );
-    box-shadow: 0 0.75rem 1.5rem rgba(15, 18, 25, 0.05);
+    box-shadow: 0 0.75rem 1.5rem oklch(0.183 0.008 243.1 / 0.05);
     padding: 1rem 1.1rem;
     transition:
       transform 0.25s ease,
@@ -577,7 +577,7 @@
   .pagefind-panel :global(.pagefind-ui__result:hover) {
     transform: translateY(-2px);
     border-color: color-mix(in srgb, var(--color-red) 24%, var(--grey-4));
-    box-shadow: 0 1rem 2rem rgba(15, 18, 25, 0.09);
+    box-shadow: 0 1rem 2rem oklch(0.183 0.008 243.1 / 0.09);
   }
 
   .pagefind-panel :global(.pagefind-ui__result-link) {
