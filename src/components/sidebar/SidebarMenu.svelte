@@ -24,7 +24,7 @@
   const menuItems = $derived(renderNavItems(menu || []));
 </script>
 
-<nav class="menu p-5 m-0 bg-transparent">
+<nav class="menu p-5 m-0 bg-transparent" aria-label="侧栏菜单导航">
   <ul class="menu-list list-none m-0 p-0">
     {#each menuItems as item (item.data.href)}
       {@const icon = item.data.icon}

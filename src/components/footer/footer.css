@@ -55,4 +55,8 @@
   .theme-info {
     display: inline-block;
   }
+
+  .site-uptime {
+    color: var(--grey-6);
+  }
 }
