@@ -127,16 +127,25 @@
   });
 
   $effect(() => {
-    activePanel;
-    panels.length;
-
     if (!sidebarElement || !innerElement) {
       return;
     }
 
-    sidebarElement.style.minHeight = isAffix
-      ? `${innerElement.offsetHeight}px`
-      : "";
+    const sidebar = sidebarElement;
+    const inner = innerElement;
+
+    const updateMinHeight = () => {
+      sidebar.style.minHeight = isAffix ? `${inner.offsetHeight}px` : "";
+    };
+
+    updateMinHeight();
+
+    const resizeObserver = new ResizeObserver(updateMinHeight);
+    resizeObserver.observe(inner);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
   });
 
   onMount(() => {

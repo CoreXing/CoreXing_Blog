@@ -20,7 +20,11 @@ const msgNoScript = t("random.noScript");
     <meta name="robots" content="noindex, nofollow" />
   </Fragment>
 
-  <div class="wrap random-page">
+  <div
+    class="wrap random-page"
+    data-post-urls={JSON.stringify(postUrls)}
+    data-msg-no-post={msgNoPost}
+  >
     <div class="random-card" id="random-card">
       <div class="icon-wrap" id="icon-wrap">
         <span class="icon-spin" id="icon-spin">
@@ -40,7 +44,21 @@ const msgNoScript = t("random.noScript");
   </div>
 </Layout>
 
-<script is:inline define:vars={{ postUrls, msgNoPost }}>
+<script>
+  const randomPageElement = document.querySelector<HTMLElement>(".random-page");
+  const postUrlsRaw = randomPageElement?.dataset.postUrls ?? "[]";
+  const msgNoPost = randomPageElement?.dataset.msgNoPost ?? "暂无可跳转文章";
+
+  let postUrls: string[] = [];
+  try {
+    const parsed = JSON.parse(postUrlsRaw) as unknown;
+    if (Array.isArray(parsed)) {
+      postUrls = parsed.filter((url): url is string => typeof url === "string");
+    }
+  } catch {
+    postUrls = [];
+  }
+
   let hasRedirected = false;
 
   function pickRandom() {

@@ -147,19 +147,19 @@ const { defaultValue = "", class: className = "" }: Props = Astro.props;
 </style>
 
 <script>
-  // @ts-nocheck
   const DATA_BOUND_KEY = "tabsBound";
+  type TabsRoot = HTMLElement;
+  type TabItem = HTMLElement;
 
-  /** @param {HTMLElement} root */
-  const initTabs = (root) => {
+  const initTabs = (root: TabsRoot) => {
     if (root.dataset[DATA_BOUND_KEY] === "true") {
       return;
     }
 
-    const navList = root.querySelector(":scope > .nav > ul");
-    const nav = root.querySelector(":scope > .nav");
+    const navList = root.querySelector<HTMLUListElement>(":scope > .nav > ul");
+    const nav = root.querySelector<HTMLElement>(":scope > .nav");
     const tabItems = Array.from(
-      root.querySelectorAll(":scope > .tabs-panels > .tab-item"),
+      root.querySelectorAll<TabItem>(":scope > .tabs-panels > .tab-item"),
     );
 
     if (!navList || tabItems.length === 0) {
@@ -178,7 +178,7 @@ const { defaultValue = "", class: className = "" }: Props = Astro.props;
       }
     }
 
-    const tabButtons = [];
+    const tabButtons: HTMLButtonElement[] = [];
 
     tabItems.forEach((item, index) => {
       const tabLabel =
@@ -212,7 +212,7 @@ const { defaultValue = "", class: className = "" }: Props = Astro.props;
       tabButtons.push(button);
     });
 
-    const activate = (index) => {
+    const activate = (index: number) => {
       tabItems.forEach((item, i) => {
         const isActive = i === index;
         item.classList.toggle("active", isActive);
@@ -236,7 +236,7 @@ const { defaultValue = "", class: className = "" }: Props = Astro.props;
   };
 
   const initAllTabs = () => {
-    const tabsRoots = document.querySelectorAll(".md .tabs");
+    const tabsRoots = document.querySelectorAll<TabsRoot>(".md .tabs");
     tabsRoots.forEach((root) => {
       initTabs(root);
     });

@@ -151,7 +151,7 @@ import SearchPage from "@/components/search/SearchPage.svelte";
 
     <title>{pageTitle}</title>
   </head>
-  <body>
+  <body data-visibility-title-config={JSON.stringify(visibilityTitleConfig)}>
     <NavBar
       client:load
       name={siteName}
@@ -212,22 +212,45 @@ import SearchPage from "@/components/search/SearchPage.svelte";
         document.body.style.fontFamily = css.family as string;
       });
     </script>
-    <script
-      define:vars={{
-        visibilityTitleConfig,
-      }}
-    >
+    <script>
+      type VisibilityTitleScriptConfig = {
+        enable: boolean;
+        leaveTitle: string;
+        returnTitle: string;
+        restoreDelay: number;
+      };
+
+      const parseVisibilityTitleConfig = () => {
+        const raw = document.body.dataset.visibilityTitleConfig;
+        if (!raw) {
+          return {} as Partial<VisibilityTitleScriptConfig>;
+        }
+
+        try {
+          const parsed = JSON.parse(raw) as unknown;
+          if (typeof parsed === "object" && parsed !== null) {
+            return parsed as Partial<VisibilityTitleScriptConfig>;
+          }
+        } catch {
+          // ignore malformed JSON and fallback to defaults
+        }
+
+        return {} as Partial<VisibilityTitleScriptConfig>;
+      };
+
+      const visibilityTitleConfigData = parseVisibilityTitleConfig();
       const config = {
-        enable: visibilityTitleConfig?.enable ?? true,
-        leaveTitle: visibilityTitleConfig?.leaveTitle ?? "(╥﹏╥) 不要走嘛...",
+        enable: visibilityTitleConfigData.enable ?? true,
+        leaveTitle:
+          visibilityTitleConfigData.leaveTitle ?? "(╥﹏╥) 不要走嘛...",
         returnTitle:
-          visibilityTitleConfig?.returnTitle ?? "(๑•̀ㅂ•́)و✧ 欢迎回来！",
-        restoreDelay: visibilityTitleConfig?.restoreDelay ?? 3000,
+          visibilityTitleConfigData.returnTitle ?? "(๑•̀ㅂ•́)و✧ 欢迎回来！",
+        restoreDelay: visibilityTitleConfigData.restoreDelay ?? 3000,
       };
 
       if (config.enable) {
         let originalTitle = document.title;
-        let restoreTimer;
+        let restoreTimer: number | undefined;
 
         const clearRestoreTimer = () => {
           if (restoreTimer !== undefined) {

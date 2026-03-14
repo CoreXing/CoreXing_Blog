@@ -16,8 +16,6 @@ export default function spanDirective() {
     visit(tree, "textDirective", (node) => {
       if (node.name !== "span") return;
 
-      const data = node.data || (node.data = {});
-
       // 构建 MDX JSX 属性
       const jsxAttributes = [];
 

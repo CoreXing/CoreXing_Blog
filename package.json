@@ -10,7 +10,7 @@
     "preview": "bunx --bun astro preview",
     "astro": "bunx --bun astro",
     "check": "bunx --bun astro check --root .",
-    "lint": "bunx --bun oxlint --type-aware . --fix",
+    "lint": "bunx --bun oxlint --type-aware --type-check . --fix",
     "format": "bunx oxfmt .",
     "test": "bun test",
     "hyc": "hyc"

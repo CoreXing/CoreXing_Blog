@@ -250,11 +250,11 @@ const { type = "single" }: Props = Astro.props;
 </style>
 
 <script>
-  // @ts-nocheck
   const DATA_BOUND_KEY = "quizBound";
+  type QuizType = "true" | "false" | "single" | "multi" | "fill";
+  type QuizItem = HTMLElement;
 
-  /** @param {"true" | "false" | "single" | "multi" | "fill"} quizType */
-  const getQuizTypeLabel = (quizType) => {
+  const getQuizTypeLabel = (quizType: QuizType) => {
     switch (quizType) {
       case "true":
       case "false":
@@ -269,19 +269,19 @@ const { type = "single" }: Props = Astro.props;
     }
   };
 
-  /** @param {HTMLElement} quizItem */
-  const revealAnswer = (quizItem) => {
+  const revealAnswer = (quizItem: QuizItem) => {
     quizItem.classList.add("show");
   };
 
-  /** @param {HTMLElement} quizItem */
-  const markSingleOrMulti = (quizItem) => {
-    const options = quizItem.querySelectorAll(
+  const markSingleOrMulti = (quizItem: QuizItem) => {
+    const options = quizItem.querySelectorAll<HTMLElement>(
       ":scope .quiz-options > .quiz-option",
     );
     options.forEach((option) => {
       const isCorrect = option.dataset.correct === "true";
-      let optionIcon = option.querySelector(":scope > .quiz-result-icon");
+      let optionIcon = option.querySelector<HTMLSpanElement>(
+        ":scope > .quiz-result-icon",
+      );
       if (!optionIcon) {
         optionIcon = document.createElement("span");
         optionIcon.className = "quiz-result-icon";
@@ -298,20 +298,17 @@ const { type = "single" }: Props = Astro.props;
     revealAnswer(quizItem);
   };
 
-  /** @param {HTMLElement} quizItem */
-  const bindQuizItem = (quizItem) => {
+  const bindQuizItem = (quizItem: QuizItem) => {
     if (quizItem.dataset[DATA_BOUND_KEY] === "true") {
       return;
     }
 
-    const quizType =
-      /** @type {"true" | "false" | "single" | "multi" | "fill"} */ (
-        quizItem.dataset.quizType || "single"
-      );
-    const question = quizItem.querySelector(":scope > .quiz-question");
-    const firstQuestionParagraph = question?.querySelector(
-      ":scope > p:first-child",
+    const quizType = (quizItem.dataset.quizType || "single") as QuizType;
+    const question = quizItem.querySelector<HTMLElement>(
+      ":scope > .quiz-question",
     );
+    const firstQuestionParagraph =
+      question?.querySelector<HTMLParagraphElement>(":scope > p:first-child");
 
     if (firstQuestionParagraph) {
       firstQuestionParagraph.dataset.type = getQuizTypeLabel(quizType);
@@ -336,7 +333,8 @@ const { type = "single" }: Props = Astro.props;
           quizItem.classList.toggle("show", willShow);
 
           if (willShow) {
-            const gaps = quizItem.querySelectorAll(":scope .quiz-gap");
+            const gaps =
+              quizItem.querySelectorAll<HTMLElement>(":scope .quiz-gap");
             gaps.forEach((gap) => {
               gap.textContent = gap.dataset.answer || "";
             });
@@ -354,8 +352,8 @@ const { type = "single" }: Props = Astro.props;
 
     if (quizType === "single") {
       const hasAnswer = Boolean(quizItem.querySelector(":scope .quiz-answer"));
-      let actionButton = hasAnswer
-        ? quizItem.querySelector(":scope > .quiz-check-btn")
+      let actionButton: HTMLButtonElement | null = hasAnswer
+        ? quizItem.querySelector<HTMLButtonElement>(":scope > .quiz-check-btn")
         : null;
       if (hasAnswer && !actionButton) {
         actionButton = document.createElement("button");
@@ -366,7 +364,7 @@ const { type = "single" }: Props = Astro.props;
         quizItem.append(actionButton);
       }
 
-      const options = quizItem.querySelectorAll(
+      const options = quizItem.querySelectorAll<HTMLElement>(
         ":scope .quiz-options > .quiz-option",
       );
       options.forEach((option) => {
@@ -387,7 +385,7 @@ const { type = "single" }: Props = Astro.props;
     }
 
     if (quizType === "multi") {
-      const options = quizItem.querySelectorAll(
+      const options = quizItem.querySelectorAll<HTMLElement>(
         ":scope .quiz-options > .quiz-option",
       );
       options.forEach((option) => {
@@ -396,7 +394,9 @@ const { type = "single" }: Props = Astro.props;
         });
       });
 
-      let actionButton = quizItem.querySelector(":scope > .quiz-check-btn");
+      let actionButton = quizItem.querySelector<HTMLButtonElement>(
+        ":scope > .quiz-check-btn",
+      );
       if (!actionButton) {
         actionButton = document.createElement("button");
         actionButton.type = "button";
@@ -421,7 +421,7 @@ const { type = "single" }: Props = Astro.props;
   };
 
   const initQuiz = () => {
-    const quizItems = document.querySelectorAll(".md .quiz-item");
+    const quizItems = document.querySelectorAll<QuizItem>(".md .quiz-item");
     quizItems.forEach(bindQuizItem);
   };
 

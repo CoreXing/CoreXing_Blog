@@ -1,13 +1,11 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { getT } from "@/i18n";
 
 interface Props {
   moment: CollectionEntry<"moments">;
 }
 
 const { moment } = Astro.props;
-const t = getT();
 
 // 格式化日期
 function formatDate(date: Date): string {
