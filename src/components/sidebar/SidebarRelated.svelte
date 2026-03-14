@@ -30,7 +30,7 @@
       {/each}
     </ul>
   {:else}
-    <p class="text-[var(--grey-5)] text-center text-sm">
+    <p class="text-grey-5 text-center text-sm">
       {t("sidebar.related.noContent")}
     </p>
   {/if}

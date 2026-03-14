@@ -106,7 +106,7 @@
 
 .md .mdx-collapse__summary::before {
   content: "▸";
-  color: var(--grey-5);
+  color: var(--text-color-muted);
   margin-right: 0.5rem;
 }
 
@@ -261,7 +261,7 @@ span.label {
 .md .quiz-group .quiz-item > .quiz-question > p:first-child::before {
   content: "[" attr(data-type) "]";
   font-size: 0.75rem;
-  color: var(--grey-5);
+  color: var(--text-color-muted);
   margin: auto 0.3125rem;
 }
 
@@ -394,7 +394,7 @@ span.label {
 
 .md .quiz-group .quiz-mistake {
   display: block;
-  border: 0.1875rem dashed var(--grey-5);
+  border: 0.1875rem dashed var(--text-color-muted);
   padding: 0.625rem 1.25rem;
   background: var(--grey-3);
   margin: 0.3125rem 0;
@@ -404,7 +404,7 @@ span.label {
   display: block;
   content: "[" attr(data-type) "]";
   font-size: 0.8125rem;
-  color: var(--grey-5);
+  color: var(--text-color-muted);
 }
 
 .md .quiz-group .quiz-check-btn {

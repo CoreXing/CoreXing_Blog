@@ -380,6 +380,22 @@ interface FriendsConfig {
   links: FriendLinkConfig[];
 }
 
+interface TagCloudConfig {
+  /**
+   * 标签云颜色梯度起始色。
+   * - 用于按词频计算颜色渐变
+   * - 建议填写可被 TinyColor 解析的颜色（如十六进制）
+   */
+  startColor?: string;
+
+  /**
+   * 标签云颜色梯度结束色。
+   * - 用于按词频计算颜色渐变
+   * - 建议填写可被 TinyColor 解析的颜色（如十六进制）
+   */
+  endColor?: string;
+}
+
 interface VisibilityTitleConfig {
   /**
    * 是否启用页面可视度标题切换。
@@ -573,6 +589,12 @@ export interface ShokaXThemeConfig {
    * - 定义友链页面展示的卡片数据
    */
   friends?: FriendsConfig;
+
+  /**
+   * 标签云配色配置。
+   * - 用于控制标签云字号梯度对应的颜色渐变
+   */
+  tagCloud?: TagCloudConfig;
 
   /**
    * 页面可视度标题切换配置。

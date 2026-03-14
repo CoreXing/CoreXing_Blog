@@ -43,8 +43,40 @@
   --body-bg-shadow: var(--grey-2);
   --box-bg-shadow: var(--grey-9-a1);
   --text-color: var(--grey-7);
+  --text-color-muted: var(--grey-5);
+  --text-color-subtle: var(--grey-4);
   --header-text-color: var(--grey-0);
+  --border-color-muted: var(--grey-4);
   --primary-color: var(--color-red);
+  --surface-code: var(--grey-3);
+  --surface-code-header: var(--grey-2);
+
+  --codeblock-shadow: 0.5rem 0.5rem 1rem var(--grey-3);
+  --codeblock-dot-red: oklch(0.62 0.2 16.9);
+  --codeblock-dot-yellow: oklch(0.74 0.14 73);
+  --codeblock-dot-green: oklch(0.66 0.11 138);
+  --codeblock-action-color: var(--text-color-muted);
+  --codeblock-action-hover-color: var(--text-color);
+  --codeblock-collapse-gradient-end: var(--surface-code);
+  --codeblock-button-shadow: 0 2px 8px oklch(0 0 0 / 0.15);
+  --codeblock-button-shadow-hover: 0 4px 12px oklch(0 0 0 / 0.2);
+  --codeblock-overlay-bg: oklch(0 0 0 / 0.85);
+
+  --line-hover-bg: oklch(0 0 0 / 0.06);
+  --cb-line-highlight-bg: oklch(0.93 0.131 60 / 0.14);
+  --cb-line-highlight-border: oklch(0.845 0.148 46.9 / 0.9);
+  --cb-diff-add-bg: oklch(0.676 0.077 120.2 / 0.14);
+  --cb-diff-add-border: oklch(0.676 0.077 120.2 / 0.75);
+  --cb-diff-remove-bg: oklch(0.643 0.213 18.1 / 0.14);
+  --cb-diff-remove-border: oklch(0.643 0.213 18.1 / 0.75);
+  --cb-focus-dim-opacity: 0.55;
+  --cb-focus-bg: oklch(0.661 0.162 216 / 0.08);
+  --cb-focus-border: oklch(0.661 0.162 216 / 0.65);
+  --cb-error-bg: oklch(0.643 0.213 18.1 / 0.14);
+  --cb-warning-bg: oklch(0.77 0.17 35 / 0.14);
+  --cb-error-border: oklch(0.643 0.213 18.1 / 0.85);
+  --cb-warning-border: oklch(0.77 0.17 35 / 0.85);
+  --cb-highlighted-word-bg: oklch(0.93 0.131 60 / 0.25);
 
   --nav-bg: linear-gradient(-225deg, var(--color-cyan-light) 0%, var(--color-pink-light) 100%);
 }
@@ -119,7 +151,36 @@
   --body-bg-shadow: oklch(0 0 0);
   --box-bg-shadow: oklch(0 0 0);
   --text-color: var(--grey-5);
+  --text-color-muted: var(--grey-6);
+  --text-color-subtle: var(--grey-5);
   --header-text-color: var(--grey-9);
+  --border-color-muted: var(--grey-4);
+  --surface-code: var(--grey-3);
+  --surface-code-header: var(--grey-2);
+
+  --codeblock-shadow: none;
+  --codeblock-action-color: var(--text-color-muted);
+  --codeblock-action-hover-color: var(--text-color);
+  --codeblock-collapse-gradient-end: var(--surface-code);
+  --codeblock-button-shadow: 0 2px 8px oklch(0 0 0 / 0.2);
+  --codeblock-button-shadow-hover: 0 4px 12px oklch(0 0 0 / 0.3);
+  --codeblock-overlay-bg: oklch(0 0 0 / 0.85);
+
+  --line-hover-bg: oklch(1 0 0 / 0.1);
+  --cb-line-highlight-bg: oklch(1 0 0 / 0.06);
+  --cb-line-highlight-border: oklch(0.845 0.148 46.9 / 0.35);
+  --cb-diff-add-bg: oklch(0.676 0.077 120.2 / 0.16);
+  --cb-diff-add-border: oklch(0.676 0.077 120.2 / 0.55);
+  --cb-diff-remove-bg: oklch(0.643 0.213 18.1 / 0.16);
+  --cb-diff-remove-border: oklch(0.643 0.213 18.1 / 0.55);
+  --cb-focus-dim-opacity: 0.5;
+  --cb-focus-bg: oklch(0.661 0.162 216 / 0.12);
+  --cb-focus-border: oklch(0.661 0.162 216 / 0.55);
+  --cb-error-bg: oklch(0.643 0.213 18.1 / 0.18);
+  --cb-warning-bg: oklch(0.77 0.17 35 / 0.18);
+  --cb-error-border: oklch(0.643 0.213 18.1 / 0.7);
+  --cb-warning-border: oklch(0.77 0.17 35 / 0.7);
+  --cb-highlighted-word-bg: oklch(0.93 0.131 60 / 0.18);
 
   --nav-bg: linear-gradient(-225deg, var(--color-cyan-light) 0, var(--color-pink-light) 100%);
 }

@@ -8,10 +8,13 @@ interface Tag {
 interface TagCloudOptions {
   minFontSize: number; // 最小字体大小（例如 12）
   maxFontSize: number; // 最大字体大小（例如 32）
-  startColor: string; // 起始颜色，例如 '#888888'
-  endColor: string; // 终止颜色，例如 '#ff0000'
+  startColor?: string; // 起始颜色，例如 '#888888'
+  endColor?: string; // 终止颜色，例如 '#ff0000'
   limit?: number; // 最大处理数量
 }
+
+const DEFAULT_TAG_CLOUD_START_COLOR = "#8a8a8a";
+const DEFAULT_TAG_CLOUD_END_COLOR = "#0084ff";
 
 interface TagCloudItem {
   name: string;
@@ -34,6 +37,9 @@ interface TagCloudItem {
 export function generateTagCloud(tags: Tag[], options: TagCloudOptions): TagCloudItem[] {
   const { minFontSize, maxFontSize, startColor, endColor, limit } = options;
 
+  const effectiveStartColor = startColor || DEFAULT_TAG_CLOUD_START_COLOR;
+  const effectiveEndColor = endColor || DEFAULT_TAG_CLOUD_END_COLOR;
+
   const sorted = [...tags].sort((a, b) => b.count - a.count);
   const limited = typeof limit === "number" ? sorted.slice(0, limit) : sorted;
 
@@ -41,12 +47,12 @@ export function generateTagCloud(tags: Tag[], options: TagCloudOptions): TagClou
   const minCount = limited[limited.length - 1]?.count || 1;
   const range = maxCount - minCount || 1;
 
-  const start = new TinyColor(startColor);
+  const start = new TinyColor(effectiveStartColor);
 
   return limited.map((tag) => {
     const weight = (tag.count - minCount) / range;
     const fontSize = Math.round(minFontSize + (maxFontSize - minFontSize) * weight);
-    const color = start.mix(endColor, weight * 100).toHexString();
+    const color = start.mix(effectiveEndColor, weight * 100).toHexString();
 
     return {
       name: tag.name,
