@@ -9,7 +9,6 @@
     navLinks?: NavItemType[];
     rootText: string;
     class?: string;
-    [key: string]: any;
   }
 
   const {

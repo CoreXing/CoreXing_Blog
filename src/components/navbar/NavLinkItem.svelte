@@ -6,7 +6,6 @@
     text?: string;
     icon?: string | null;
     class?: string;
-    [key: string]: any;
   }
 
   const {

@@ -5,7 +5,6 @@
   interface Props {
     navLinks?: NavItemType[];
     class?: string;
-    [key: string]: any;
   }
 
   const { navLinks = [], class: className = "" }: Props = $props();

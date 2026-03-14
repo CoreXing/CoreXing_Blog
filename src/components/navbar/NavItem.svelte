@@ -4,7 +4,6 @@
   interface Props {
     class?: string;
     children?: Snippet;
-    [key: string]: any;
   }
 
   const { class: className = "", children }: Props = $props();
