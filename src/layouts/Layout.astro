@@ -17,6 +17,7 @@ import themeConfig from "@/theme.config.ts";
 import "@/styles/palette.css";
 import "@/styles/style.css";
 import "@/styles/header-cover.css";
+import "@/styles/mdx-components.css";
 
 import Loading from "@/components/Loading.astro";
 import { covers, resolveFixedCover } from "@/components/Images.astro";
@@ -202,6 +203,9 @@ import SearchPage from "@/components/search/SearchPage.svelte";
         </ActiveLayout>
       </main>
     </div>
+    <script>
+      import "@/toolkit/initMdxComponents";
+    </script>
     <script>
       import { css } from "@/assets/fonts/LXGWWenKai-Regular.ttf?subsets";
 

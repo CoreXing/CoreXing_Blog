@@ -1,44 +1,44 @@
 :root {
-  --grey-0: #ffffff;
-  --grey-1: #fdfdfd;
-  --grey-2: #f7f7f7;
-  --grey-3: #eff2f3;
-  --grey-4: #cccccc;
-  --grey-5: #757575;
-  --grey-6: #666666;
-  --grey-7: #333333;
-  --grey-8: #222222;
-  --grey-9: #000000;
+  --grey-0: oklch(1 0 0);
+  --grey-1: oklch(0.995 0 0);
+  --grey-2: oklch(0.975 0 0);
+  --grey-3: oklch(0.952 0.004 240);
+  --grey-4: oklch(0.845 0 0);
+  --grey-5: oklch(0.597 0 0);
+  --grey-6: oklch(0.522 0 0);
+  --grey-7: oklch(0.321 0 0);
+  --grey-8: oklch(0.252 0 0);
+  --grey-9: oklch(0 0 0);
 
-  --grey-1-a0: rgba(253, 253, 253, 0);
-  --grey-1-a7: rgba(253, 253, 253, 0.7);
-  --grey-1-a5: rgba(253, 253, 253, 0.5);
-  --grey-1-a3: rgba(253, 253, 253, 0.3);
-  --grey-9-a1: rgba(0, 0, 0, 0.1);
-  --grey-9-a5: rgba(0, 0, 0, 0.5);
-  --grey-2-a0: rgba(247, 247, 247, 0);
+  --grey-1-a0: oklch(0.995 0 0 / 0);
+  --grey-1-a7: oklch(0.995 0 0 / 0.7);
+  --grey-1-a5: oklch(0.995 0 0 / 0.5);
+  --grey-1-a3: oklch(0.995 0 0 / 0.3);
+  --grey-9-a1: oklch(0 0 0 / 0.1);
+  --grey-9-a5: oklch(0 0 0 / 0.5);
+  --grey-2-a0: oklch(0.975 0 0 / 0);
 
-  --color-pink-light-old: #ffe6fa;
-  --color-pink-light: rgba(255, 230, 250, 0.72);
-  --color-cyan-light-old: #e3fdf5;
-  --color-cyan-light: rgba(227, 253, 245, 0.72);
+  --color-pink-light-old: oklch(0.946 0.047 338.1);
+  --color-pink-light: oklch(0.946 0.047 338.1 / 0.72);
+  --color-cyan-light-old: oklch(0.972 0.027 169.1);
+  --color-cyan-light: oklch(0.972 0.027 169.1 / 0.72);
 
-  --color-red: #e22843;
-  --color-pink: #ed6ea0;
-  --color-orange: #ec8c69;
-  --color-yellow: #eab700;
-  --color-green: #0a7426;
-  --color-aqua: #3e999f;
-  --color-blue: #38a1db;
-  --color-purple: #9d5b8b;
-  --color-grey: #869194;
+  --color-red: oklch(0.579 0.216 22.2);
+  --color-pink: oklch(0.709 0.147 351.2);
+  --color-orange: oklch(0.721 0.153 42.4);
+  --color-yellow: oklch(0.791 0.158 91.8);
+  --color-green: oklch(0.517 0.155 143.2);
+  --color-aqua: oklch(0.638 0.085 197.2);
+  --color-blue: oklch(0.679 0.123 240.7);
+  --color-purple: oklch(0.569 0.105 336.2);
+  --color-grey: oklch(0.654 0.015 224.3);
 
-  --color-red-a1: rgba(233, 84, 107, 0.1);
-  --color-red-a3: rgba(233, 84, 107, 0.3);
-  --color-pink-a3: rgba(237, 110, 160, 0.3);
-  --color-pink-light-a3: rgba(255, 230, 250, 0.3);
-  --color-pink-light-a5: rgba(255, 230, 250, 0.5);
-  --color-pink-light-a7: rgba(255, 230, 250, 0.7);
+  --color-red-a1: oklch(0.646 0.18 22 / 0.1);
+  --color-red-a3: oklch(0.646 0.18 22 / 0.3);
+  --color-pink-a3: oklch(0.709 0.147 351.2 / 0.3);
+  --color-pink-light-a3: oklch(0.946 0.047 338.1 / 0.3);
+  --color-pink-light-a5: oklch(0.946 0.047 338.1 / 0.5);
+  --color-pink-light-a7: oklch(0.946 0.047 338.1 / 0.7);
 
   --body-bg-shadow: var(--grey-2);
   --box-bg-shadow: var(--grey-9-a1);
@@ -50,74 +50,74 @@
 }
 
 .primary {
-  --note-border: #cda0c7;
-  --note-bg: #fdf8ff;
-  --note-text: #8a51c0;
-  --note-hover: #935aca;
+  --note-border: oklch(0.759 0.076 332.2);
+  --note-bg: oklch(0.984 0.014 320.3);
+  --note-text: oklch(0.568 0.161 317.8);
+  --note-hover: oklch(0.597 0.155 316.4);
 }
 
 .info {
-  --note-border: #8fa4dc;
-  --note-bg: #f1f9ff;
-  --note-text: #1d4974;
-  --note-hover: #1d5fa0;
+  --note-border: oklch(0.725 0.092 274.3);
+  --note-bg: oklch(0.976 0.014 242.6);
+  --note-text: oklch(0.411 0.087 252.2);
+  --note-hover: oklch(0.5 0.139 256.1);
 }
 
 .success {
-  --note-border: #a3c293;
-  --note-bg: #fcfff5;
-  --note-text: #2c662d;
-  --note-hover: #3b883c;
+  --note-border: oklch(0.793 0.078 130.4);
+  --note-bg: oklch(0.993 0.021 115.7);
+  --note-text: oklch(0.467 0.112 139.5);
+  --note-hover: oklch(0.554 0.139 141.7);
 }
 
 .warning {
-  --note-border: #c9ba9b;
-  --note-bg: #fffbeb;
-  --note-text: #947600;
-  --note-hover: #ccb045;
+  --note-border: oklch(0.794 0.04 85.5);
+  --note-bg: oklch(0.987 0.029 97.8);
+  --note-text: oklch(0.611 0.132 88.6);
+  --note-hover: oklch(0.777 0.118 93.6);
 }
 
 .danger {
-  --note-border: #f4b3c1;
-  --note-bg: #fff2f5;
-  --note-text: #cc0f35;
-  --note-hover: #f14668;
+  --note-border: oklch(0.817 0.097 0.7);
+  --note-bg: oklch(0.97 0.021 359.8);
+  --note-text: oklch(0.57 0.222 20.1);
+  --note-hover: oklch(0.653 0.212 18.8);
 }
 
 :root[data-theme="dark"] {
-  --grey-0: #222;
-  --grey-1: #21252b;
-  --grey-2: #363636;
-  --grey-3: #444444;
-  --grey-4: #666666;
-  --grey-5: #aaaaaa;
-  --grey-6: #cccccc;
-  --grey-7: #dddddd;
-  --grey-8: #eeeeee;
-  --grey-9: #f7f7f7;
+  --grey-0: oklch(0.252 0 0);
+  --grey-1: oklch(0.283 0.011 264);
+  --grey-2: oklch(0.361 0 0);
+  --grey-3: oklch(0.426 0 0);
+  --grey-4: oklch(0.522 0 0);
+  --grey-5: oklch(0.757 0 0);
+  --grey-6: oklch(0.845 0 0);
+  --grey-7: oklch(0.901 0 0);
+  --grey-8: oklch(0.949 0 0);
+  --grey-9: oklch(0.975 0 0);
 
-  --grey-1-a7: rgba(34, 34, 34, 0.7);
-  --grey-1-a5: rgba(34, 34, 34, 0.5);
-  --grey-1-a3: rgba(34, 34, 34, 0.3);
-  --grey-1-a0: rgba(34, 34, 34, 0);
-  --grey-9-a1: rgba(51, 51, 51, 0.1);
-  --grey-2-a0: rgba(54, 54, 54, 0);
+  --grey-1-a7: oklch(0.283 0.011 264 / 0.7);
+  --grey-1-a5: oklch(0.283 0.011 264 / 0.5);
+  --grey-1-a3: oklch(0.283 0.011 264 / 0.3);
+  --grey-1-a0: oklch(0.283 0.011 264 / 0);
+  --grey-9-a1: oklch(0.321 0 0 / 0.1);
+  --grey-2-a0: oklch(0.361 0 0 / 0);
 
-  --color-pink-light: #322d31;
-  --color-cyan-light: #2d3230;
+  --color-pink-light: oklch(0.313 0.016 347.9);
+  --color-cyan-light: oklch(0.321 0.009 174.8);
 
-  --color-red: #e5425b;
-  --color-pink: rgba(237, 110, 160, 0.8);
-  --color-orange: rgba(236, 140, 105, 0.8);
-  --color-yellow: #f5eab7;
-  --color-green: #7fbf7f;
-  --color-aqua: #a3d9d9;
-  --color-blue: #a3d9f5;
-  --color-purple: #d9a3d9;
-  --color-grey: #d9d9d9;
+  --color-red: oklch(0.616 0.214 21.6);
+  --color-pink: oklch(0.709 0.147 351.2 / 0.8);
+  --color-orange: oklch(0.721 0.153 42.4 / 0.8);
+  --color-yellow: oklch(0.934 0.05 102);
+  --color-green: oklch(0.765 0.112 143.7);
+  --color-aqua: oklch(0.848 0.059 197.5);
+  --color-blue: oklch(0.864 0.066 240.1);
+  --color-purple: oklch(0.786 0.084 330.3);
+  --color-grey: oklch(0.885 0 0);
 
-  --body-bg-shadow: #000;
-  --box-bg-shadow: #000;
+  --body-bg-shadow: oklch(0 0 0);
+  --box-bg-shadow: oklch(0 0 0);
   --text-color: var(--grey-5);
   --header-text-color: var(--grey-9);
 

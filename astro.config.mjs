@@ -11,7 +11,7 @@ import {
   transformerNotationHighlight,
 } from "@shikijs/transformers";
 
-import UnoCSS from "unocss/astro";
+import UnoCSS from "@unocss/astro";
 
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -137,4 +137,10 @@ export default defineConfig({
     ],
     rehypePlugins: [rehypeKatex, rehypeAutoLinkHeadings],
   },
+  experimental: {
+    rustCompiler: true,
+    queuedRendering: {
+      enabled: true,
+    },
+  }
 });
