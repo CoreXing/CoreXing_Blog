@@ -39,8 +39,8 @@ import PlayformInline from "@playform/inline";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://CoreXing.github.io",
-  base: "CoreXing-Blog",
+  site: "https://corexing.github.io",
+  base: "/CoreXing_Blog",
   trailingSlash: "always",
   build: {
     format: "directory",

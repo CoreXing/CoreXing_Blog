@@ -4,7 +4,7 @@ on:
   # 在每次推送到 `main` 分支時觸發部署
   # 如果你想要在其他分支上觸發部署，請將 `main` 替換成你想要的分支名稱
   push:
-    branches: [ main ]
+    branches: [ main, master ]
   # 允許你在 GitHub 上的 Actions 分頁中手動觸發此部署
   workflow_dispatch:
 
@@ -20,12 +20,20 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
-        # with:
-          # path: . # 儲存庫中 Astro 專案的根位置。（可選）
-          # node-version: 20 # 用於建置網站的特定 Node.js 版本，預設為 20。（可選）
-          # package-manager: pnpm@latest # 應該使用哪個 Node.js 套件管理器來安裝相依套件和建置網站，會根據儲存庫中的 lockfile 自動檢測。（可選）
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build site
+        run: bun run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
   deploy:
     needs: build
