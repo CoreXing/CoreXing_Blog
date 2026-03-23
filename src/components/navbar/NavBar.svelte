@@ -7,6 +7,25 @@
   import RightNavBar from "./RightNavBar.svelte";
   import { t } from "@/i18n";
 
+  const baseUrl: string = ((import.meta as any).env?.BASE_URL as string) || "/";
+  const baseNoTrailingSlash =
+    baseUrl.length > 1 && baseUrl[baseUrl.length - 1] === "/"
+      ? baseUrl.slice(0, -1)
+      : baseUrl;
+  const withBase = (path: string): string => {
+    if (!path) return path;
+    if (/^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(path)) return path;
+    if (path[0] === "#") return path;
+    if (
+      path === baseNoTrailingSlash ||
+      path.indexOf(`${baseNoTrailingSlash}/`) === 0
+    ) {
+      return path;
+    }
+    if (path[0] === "/") return `${baseNoTrailingSlash}${path}`;
+    return `${baseUrl}${path}`;
+  };
+
   interface Props {
     name: string;
     navLinks?: NavItemType[];
@@ -86,7 +105,7 @@
     <RightNavBar>
       <li>
         <a
-          href="/random/"
+          href={withBase("/random/")}
           class="nav-action text-5"
           aria-label={randomPostLabel}
           title={randomPostLabel}
