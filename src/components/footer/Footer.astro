@@ -103,6 +103,31 @@ const iconColor = sanitizeThemeColor(
         )
       }
 
+      <!-- Powered By Section -->
+      {
+        config.powered && (
+          <div class="powered-by block my-2 text-xs">
+            {t("footer.poweredBy")}{" "}
+            <a
+              href="https://astro.build"
+              target="_blank"
+              class="hover:opacity-80 border-b border-dashed"
+            >
+              Astro
+            </a>{" "}
+            {t("footer.and")}{" "}
+            <a
+              href="https://github.com/theme-shoka-x/astro-blog-shokax"
+              target="_blank"
+              class="hover:opacity-80 border-b border-dashed"
+            >
+              ShokaX
+            </a>{" "}
+            {t("footer.poweredSuffix")}
+          </div>
+        )
+      }
+
       <!-- ICP Section -->
       {
         config.icp?.enable && (

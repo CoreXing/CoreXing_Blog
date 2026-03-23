@@ -2,7 +2,7 @@
 import { defineConfig } from "./toolkit/themeConfig";
 
 export default defineConfig({
-  siteName: "CoreXing",
+  siteName: "CoreXing's Blog",
   locale: "zh-CN", // 网站语言: "zh-CN" | "en"
   nav: [
     {
@@ -61,7 +61,7 @@ export default defineConfig({
     nextGradientCover: false, // 文章导航使用渐变背景
   },
   sidebar: {
-    author: "星星 CoreXing",
+    author: "星星",
     description: "哈囉！這是我的個人網頁，這裡會放一些我的學習經歷和生活點滴。",
     social: {
       github: {
