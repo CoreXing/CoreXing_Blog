@@ -39,9 +39,8 @@ import PlayformInline from "@playform/inline";
 
 // https://astro.build/config
 export default defineConfig({
-  // `site` should be the origin only; `base` controls the subpath (GitHub Pages project site)
-  site: "https://corexing.github.io",
-  base: "/CoreXing_Blog",
+  site: "https://corexing.github.io/CoreXing_Blog",
+  base: "/CoreXing_Blog/",
   trailingSlash: "always",
   build: {
     format: "directory",
