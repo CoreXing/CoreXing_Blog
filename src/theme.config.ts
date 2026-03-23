@@ -2,12 +2,12 @@
 import { defineConfig } from "./toolkit/themeConfig";
 
 export default defineConfig({
-  siteName: "ShokaX",
+  siteName: "CoreXing",
   locale: "zh-CN", // 网站语言: "zh-CN" | "en"
   nav: [
     {
       href: "/",
-      text: "首页",
+      text: "首頁",
       icon: "i-ri-home-line",
     },
     {
@@ -19,29 +19,24 @@ export default defineConfig({
         items: [
           {
             href: "/categories/",
-            text: "分类",
+            text: "分類",
             icon: "i-ri-book-shelf-fill",
           },
           {
             href: "/tags/",
-            text: "标签",
+            text: "標籤",
             icon: "i-ri-price-tag-3-fill",
           },
           {
             href: "/archives/",
-            text: "归档",
+            text: "檔案",
             icon: "i-ri-archive-line",
           },
         ],
       },
     },
     {
-      text: "友链",
-      href: "/friends/",
-      icon: "i-ri-link",
-    },
-    {
-      text: "动态",
+      text: "動態",
       href: "/moments/",
       icon: "i-ri-chat-quote-line",
     },
@@ -85,7 +80,7 @@ export default defineConfig({
       name: "sakura rotate",
       color: "var(--color-pink)",
     },
-    count: true,
+    count: false,
     powered: true,
   },
   tagCloud: {
@@ -132,7 +127,7 @@ export default defineConfig({
     darkModeTarget: ':root[data-theme="dark"]',
     urls: [
       {
-        name: "默认歌单",
+        name: "默認歌單",
         url: "https://music.163.com/#/playlist?id=2943811283",
       },
     ],
