@@ -47,9 +47,9 @@ export default defineConfig({
     },
   ],
   brand: {
-    title: "ShokaX",
-    subtitle: "A modern blog theme",
-    logo: "✨",
+    title: "CoreXing's Blog",
+    subtitle: "紀錄學習和生活的點滴",
+    logo: "🌟",
   },
   cover: {
     enable: true,
@@ -60,14 +60,14 @@ export default defineConfig({
     //        或者填 public 路径/远程 URL（会使用 <img> 兜底渲染）
     fixedCover: {
       enable: true,
-      url: "cover-4",
+      url: "cover-1",
     },
     // gradient: true, // 渐变模式
     nextGradientCover: false, // 文章导航使用渐变背景
   },
   sidebar: {
     author: "星星 CoreXing",
-    description: "A brief introduction",
+    description: "哈囉！這是我的個人網頁，這裡會放一些我的學習經歷和生活點滴。",
     social: {
       github: {
         url: "https://github.com/CoreXing",
@@ -80,7 +80,7 @@ export default defineConfig({
     },
   },
   footer: {
-    since: 2025,
+    since: 2026,
     icon: {
       name: "sakura rotate",
       color: "var(--color-pink)",
@@ -93,7 +93,7 @@ export default defineConfig({
     endColor: "var(--color-blue)",
   },
   widgets: {
-    randomPosts: true,
+    randomPosts: false,
     recentComments: true,
     recentCommentsLimit: 10,
   },
@@ -139,8 +139,8 @@ export default defineConfig({
   },
   visibilityTitle: {
     enable: true,
-    leaveTitle: "👀 你先忙，我等你回来~",
-    returnTitle: "🎉 欢迎回来！",
+    leaveTitle: "☕ 休息一下~",
+    returnTitle: "⭐ 歡迎回來！",
     restoreDelay: 3000,
   },
   home: {

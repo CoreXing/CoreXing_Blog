@@ -80,7 +80,7 @@
       "title": "Site Search",
       "subtitle": "Find things fast",
       "action": "Open search panel",
-      "helper": "Reuse the existing Pagefind search to jump to posts, tags, and keywords."
+      "helper": "You can search by post title, tag, or keyword~"
     },
     "moments": {
       "title": "Recent Moments",
@@ -97,12 +97,12 @@
     },
     "announcement": {
       "title": "Announcement",
-      "subtitle": "Pinned notes"
+      "subtitle": "News and updates"
     },
     "extra": {
       "title": "Right Rail",
       "subtitle": "Additional widgets",
-      "empty": "No right sidebar content is enabled right now"
+      "empty": "No extra widgets yet"
     },
     "panels": {
       "contents": "Contents",
