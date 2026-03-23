@@ -23,9 +23,9 @@ export default defineConfig({
   },
 
   plugins: [
-    SiteUpTime({
-      siteCreatedAt: "2022-08-01T00:00:00Z",
-    }),
+    // SiteUpTime({
+    //   siteCreatedAt: "2026-03-24T00:00:00Z",
+    // }),
     MouseFirework({
       colors: [
         "rgba(255,182,185,.9)",
