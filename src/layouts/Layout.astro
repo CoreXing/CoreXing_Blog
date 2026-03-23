@@ -153,7 +153,10 @@ import SearchPage from "@/components/search/SearchPage.svelte";
 
     <title>{pageTitle}</title>
   </head>
-  <body data-visibility-title-config={JSON.stringify(visibilityTitleConfig)}>
+  <body
+    data-visibility-title-config={JSON.stringify(visibilityTitleConfig)}
+    data-base-url={(import.meta as any).env?.BASE_URL}
+  >
     <NavBar
       client:load
       name={siteName}
@@ -294,6 +297,82 @@ import SearchPage from "@/components/search/SearchPage.svelte";
 
         document.addEventListener("visibilitychange", onVisibilityChange);
       }
+    </script>
+    <script is:inline>
+      (() => {
+        const baseUrl = document.body?.dataset?.baseUrl || "/";
+        if (!baseUrl || baseUrl === "/") return;
+
+        const baseWithTrailing = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+        const baseNoTrailing = baseWithTrailing.replace(/\/$/, "");
+
+        const isSpecialScheme = (href) =>
+          /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(href);
+
+        const fixAnchor = (a) => {
+          const raw = a.getAttribute("href");
+          if (!raw) return;
+          if (raw.startsWith("#")) return;
+          if (raw.startsWith("//")) return;
+          if (isSpecialScheme(raw)) return;
+          if (!raw.startsWith("/")) return;
+          if (raw.startsWith(baseWithTrailing) || raw === baseNoTrailing) return;
+
+          a.setAttribute("href", `${baseNoTrailing}${raw}`);
+        };
+
+        const fixAnchorsIn = (root) => {
+          if (!root) return;
+          if (root instanceof HTMLAnchorElement) {
+            fixAnchor(root);
+            return;
+          }
+          const anchors = root.querySelectorAll
+            ? root.querySelectorAll('a[href^="/"]')
+            : [];
+          anchors.forEach(fixAnchor);
+        };
+
+        const fixAll = () => fixAnchorsIn(document);
+
+        // Initial + Astro client-side navigations
+        document.addEventListener("DOMContentLoaded", fixAll, { once: true });
+        document.addEventListener("astro:page-load", fixAll);
+
+        // Catch dynamically injected links (e.g. plugins/widgets)
+        const observer = new MutationObserver((mutations) => {
+          for (const m of mutations) {
+            m.addedNodes?.forEach((n) => {
+              if (n && n.nodeType === 1) fixAnchorsIn(n);
+            });
+          }
+        });
+        observer.observe(document.documentElement, { subtree: true, childList: true });
+
+        // Safety net: intercept clicks on still-unfixed root-absolute links
+        document.addEventListener(
+          "click",
+          (e) => {
+            const evt = e;
+            if (evt.defaultPrevented) return;
+            if (evt.button !== 0) return;
+            if (evt.metaKey || evt.ctrlKey || evt.shiftKey || evt.altKey) return;
+
+            const target = evt.target;
+            const a = target?.closest?.("a");
+            if (!a) return;
+            if (a.target && a.target !== "_self") return;
+
+            const raw = a.getAttribute("href");
+            if (!raw || !raw.startsWith("/")) return;
+            if (raw.startsWith(baseWithTrailing)) return;
+
+            evt.preventDefault();
+            window.location.assign(`${baseNoTrailing}${raw}`);
+          },
+          true,
+        );
+      })();
     </script>
     <div class="hidden">
       <CodeBlock client:idle />
