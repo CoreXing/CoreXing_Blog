@@ -66,19 +66,15 @@ export default defineConfig({
     nextGradientCover: false, // 文章导航使用渐变背景
   },
   sidebar: {
-    author: "Your Name",
+    author: "星星 CoreXing",
     description: "A brief introduction",
     social: {
       github: {
-        url: "https://github.com/yourname",
+        url: "https://github.com/CoreXing",
         icon: "i-ri-github-fill",
       },
-      twitter: {
-        url: "https://twitter.com/yourname",
-        icon: "i-ri-twitter-x-line",
-      },
       email: {
-        url: "mailto:your@email.com",
+        url: "mailto:julie7v9591@email.com",
         icon: "i-ri-mail-line",
       },
     },
@@ -91,14 +87,6 @@ export default defineConfig({
     },
     count: true,
     powered: true,
-    icp: {
-      enable: true,
-      // icon: '/beian-icon.png',
-      icpnumber: "津ICP备2022001375号",
-      icpurl: "https://beian.miit.gov.cn/",
-      // beian: '网安备案号',
-      // recordcode: 'xxxxx',
-    },
   },
   tagCloud: {
     startColor: "var(--grey-6)",
