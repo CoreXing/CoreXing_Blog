@@ -298,7 +298,7 @@
 
   #sidebar.affix .panels {
     padding-top: 3.625rem;
-    height: 100vh;
+    max-height: 100vh;
   }
 
   /* Sidebar inner */
@@ -319,16 +319,13 @@
   .panels {
     padding: 4.6875rem 0 2rem;
     width: 100%;
-    overflow: hidden;
-    min-height: 100vh;
-  }
-
-  .panels > .inner {
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .panels > .inner {
     width: auto;
-    height: 100%;
   }
 
   @media (max-width: 1023px) {
