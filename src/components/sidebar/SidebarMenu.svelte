@@ -24,55 +24,6 @@
   const menuItems = $derived(renderNavItems(menu || []));
 </script>
 
-<nav class="menu p-5 m-0 bg-transparent" aria-label="侧栏菜单导航">
-  <ul class="menu-list list-none m-0 p-0">
-    {#each menuItems as item (item.data.href)}
-      {@const icon = item.data.icon}
-      {@const text = item.data.text}
-      {@const url = item.data.href}
-      {@const dropboxItems = item.data.dropbox?.items || []}
-
-      {#if item.isDropdown && dropboxItems.length > 0}
-        <li class="item dropdown">
-          <a href={url} rel="section">
-            {#if icon}
-              <div
-                class={`ic ${icon} inline-flex justify-center items-center text-xl flex-wrap align-text-bottom mr-2.5`}
-              ></div>
-            {/if}
-            {text}
-          </a>
-          <ul class="submenu">
-            {#each dropboxItems as subItem (subItem.href)}
-              <li class="item">
-                <a href={subItem.href} rel="section">
-                  {#if subItem.icon}
-                    <div
-                      class={`ic ${getMenuIcon(subItem)} inline-flex justify-center items-center text-xl flex-wrap align-text-bottom mr-2.5`}
-                    ></div>
-                  {/if}
-                  {subItem.text}
-                </a>
-              </li>
-            {/each}
-          </ul>
-        </li>
-      {:else}
-        <li class="item">
-          <a href={url} rel="section">
-            {#if icon}
-              <div
-                class={`ic ${icon} inline-flex justify-center items-center text-xl flex-wrap align-text-bottom mr-2.5`}
-              ></div>
-            {/if}
-            {text}
-          </a>
-        </li>
-      {/if}
-    {/each}
-  </ul>
-</nav>
-
 <style>
   /* 保留状态关联样式，无法用原子类替代 */
   .menu .item {
