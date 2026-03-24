@@ -139,7 +139,7 @@ export default defineConfig({
     restoreDelay: 3000,
   },
   home: {
-    selectedCategories: [{ name: "Tutorial" }, { name: "Frontend" }],
+    selectedCategories: [{ name: "Security" }],
     pageSize: 5,
     title: {
       behavior: "default",
