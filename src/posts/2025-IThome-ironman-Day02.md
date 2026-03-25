@@ -7,12 +7,6 @@ categories: [Security]
 draft: false
 ---
 
-# 目錄
-
-1. 作者的話
-2. 閱讀前注意事項
-3. 參考資料
-
 # 正文
 
 ## 作者的話
