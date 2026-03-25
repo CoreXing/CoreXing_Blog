@@ -2,7 +2,7 @@
 title: MemLabs Writeup
 date: 2025-02-23
 description: 這是一個開源的 Memory Forensics 練習挑戰。
-tags: [Writeup, Memory Forensics]
+tags: [Writeup, Blue Team, Memory Forensics]
 categories: [Security]
 draft: false
 ---
