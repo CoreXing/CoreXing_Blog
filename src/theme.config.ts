@@ -72,6 +72,10 @@ export default defineConfig({
         url: "mailto:julie7v9591@email.com",
         icon: "i-ri-mail-line",
       },
+      instagram: {
+        url: "https://www.instagram.com/corexing2002",
+        icon: "i-ri-instagram-line",
+      },
     },
   },
   footer: {
